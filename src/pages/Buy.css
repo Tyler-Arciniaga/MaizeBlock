@@ -1,0 +1,434 @@
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Michigan colors */
+:root {
+  --michigan-blue: #00274c;
+  --michigan-maize: #ffcb05;
+  --white: #ffffff;
+  --light-gray: #f5f5f5;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-700: rgba(255, 255, 255, 0.2);
+  --green-500: #10b981;
+}
+
+/* Buy Container */
+.buy-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  color: var(--white);
+}
+
+/* Buy Header */
+.buy-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.buy-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--michigan-maize);
+  margin-bottom: 0.5rem;
+}
+
+.buy-subtitle {
+  font-size: 1.25rem;
+  color: var(--white);
+  opacity: 0.9;
+}
+
+/* Filters Section */
+.filters-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: var(--michigan-blue);
+  border: 1px solid var(--michigan-maize);
+  border-radius: 0.5rem;
+}
+
+.game-filter,
+.sort-filter {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.game-filter label,
+.sort-filter label {
+  font-weight: 600;
+  color: var(--michigan-maize);
+}
+
+.game-filter select,
+.sort-filter select {
+  padding: 0.5rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 0.375rem;
+  background-color: var(--white);
+  color: var(--michigan-blue);
+}
+
+.game-filter select:focus,
+.sort-filter select:focus {
+  outline: none;
+  border-color: var(--michigan-maize);
+  box-shadow: 0 0 0 2px rgba(255, 203, 5, 0.3);
+}
+
+.wallet-connect-button {
+  margin-left: auto;
+  background-color: var(--michigan-maize);
+  color: var(--michigan-blue);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.wallet-connect-button:hover {
+  background-color: rgba(255, 203, 5, 0.9);
+}
+
+.wallet-status {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--green-500);
+  font-weight: 600;
+}
+
+.wallet-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--green-500);
+  border-radius: 50%;
+}
+
+/* Tickets Grid */
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.ticket-card {
+  background-color: var(--michigan-blue);
+  border: 1px solid var(--michigan-maize);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-header {
+  background-color: var(--michigan-maize);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-game {
+  color: var(--michigan-blue);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.ticket-price {
+  background-color: var(--michigan-blue);
+  color: var(--michigan-maize);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
+.ticket-details {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--gray-700);
+}
+
+.ticket-location {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.ticket-location:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  color: var(--gray-400);
+}
+
+.detail-value {
+  font-weight: 600;
+}
+
+.ticket-seller {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seller-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.seller-name {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.seller-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.rating-stars {
+  color: var(--michigan-maize);
+  font-size: 0.875rem;
+}
+
+.rating-value {
+  color: var(--gray-400);
+  font-size: 0.875rem;
+}
+
+.buy-button {
+  background-color: var(--michigan-maize);
+  color: var(--michigan-blue);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+  background-color: rgba(255, 203, 5, 0.9);
+}
+
+.no-tickets-message {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 0;
+  color: var(--gray-400);
+}
+
+/* Stadium Info */
+.stadium-info {
+  background-color: var(--michigan-blue);
+  border: 1px solid var(--michigan-maize);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.stadium-title {
+  color: var(--michigan-maize);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.stadium-diagram {
+  margin: 0 auto;
+  max-width: 500px;
+  margin-bottom: 1.5rem;
+}
+
+.stadium-field {
+  background-color: var(--michigan-maize);
+  color: var(--michigan-blue);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  font-weight: 700;
+}
+
+.stadium-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.section-row {
+  padding: 0.5rem;
+  border: 1px solid var(--michigan-maize);
+  border-radius: 0.25rem;
+  color: var(--white);
+}
+
+.stadium-note {
+  color: var(--gray-400);
+  font-size: 0.875rem;
+}
+
+/* Purchase Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.purchase-modal {
+  background-color: var(--michigan-blue);
+  border: 2px solid var(--michigan-maize);
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+.modal-title {
+  color: var(--michigan-maize);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.modal-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .modal-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.purchase-details h3,
+.purchase-summary h3 {
+  color: var(--michigan-maize);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.purchase-detail-row,
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--gray-700);
+}
+
+.total-row {
+  border-bottom: none;
+  margin-top: 1rem;
+  color: var(--michigan-maize);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.purchase-notice {
+  background-color: rgba(255, 203, 5, 0.1);
+  border: 1px solid var(--michigan-maize);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.purchase-notice p {
+  color: var(--gray-300);
+  font-size: 0.875rem;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cancel-button {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid var(--gray-300);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cancel-button:hover {
+  background-color: var(--gray-700);
+}
+
+.confirm-button {
+  flex: 1;
+  background-color: var(--michigan-maize);
+  color: var(--michigan-blue);
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.confirm-button:hover {
+  background-color: rgba(255, 203, 5, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filters-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wallet-connect-button,
+  .wallet-status {
+    margin-left: 0;
+    align-self: flex-start;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+}
