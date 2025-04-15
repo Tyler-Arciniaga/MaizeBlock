@@ -1,15 +1,16 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 import "./Home.css";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
 
 function Home() {
   const [count, setCount] = useState(0);
-  const navigate = useNavigate();
+  const router = useRouter();
 
-  const navAway = (desination) => {
-    console.log(desination);
-    navigate(`/${desination}`);
+  const navAway = (destination) => {
+    console.log(destination);
+    router.push(`/${destination}`);
   };
 
   return (

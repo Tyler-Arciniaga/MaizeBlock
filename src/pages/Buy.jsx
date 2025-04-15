@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import "./Buy.css";
 
 function Buy() {
+  const router = useRouter();
   const [selectedGame, setSelectedGame] = useState("all");
   const [sortBy, setSortBy] = useState("price-low");
   const [walletConnected, setWalletConnected] = useState(false);
@@ -193,7 +195,6 @@ function Buy() {
             Connect Wallet
           </button>
         )}
-
         {walletConnected && (
           <div className="wallet-status">
             <span className="wallet-indicator"></span>
@@ -210,7 +211,6 @@ function Buy() {
                 <h3 className="ticket-game">{ticket.game}</h3>
                 <span className="ticket-price">${ticket.price.toFixed(2)}</span>
               </div>
-
               <div className="ticket-details">
                 <div className="ticket-location">
                   <span className="detail-label">Section:</span>
@@ -225,7 +225,6 @@ function Buy() {
                   <span className="detail-value">{ticket.seat}</span>
                 </div>
               </div>
-
               <div className="ticket-seller">
                 <div className="seller-info">
                   <span className="seller-name">{ticket.seller}</span>
@@ -275,7 +274,6 @@ function Buy() {
         <div className="modal-overlay">
           <div className="purchase-modal">
             <h2 className="modal-title">Confirm Purchase</h2>
-
             <div className="modal-content">
               <div className="purchase-details">
                 <h3>Ticket Details</h3>
@@ -296,7 +294,6 @@ function Buy() {
                   <span className="detail-value">{selectedTicket.seat}</span>
                 </div>
               </div>
-
               <div className="purchase-summary">
                 <h3>Payment Summary</h3>
                 <div className="summary-row">
@@ -319,7 +316,6 @@ function Buy() {
                 </div>
               </div>
             </div>
-
             <div className="purchase-notice">
               <p>
                 By completing this purchase, you agree to our terms of service.
@@ -327,7 +323,6 @@ function Buy() {
                 payment via your connected wallet.
               </p>
             </div>
-
             <div className="modal-actions">
               <button
                 className="cancel-button"

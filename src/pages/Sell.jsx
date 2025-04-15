@@ -1,8 +1,10 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import "./Sell.css";
 
 function Sell() {
+  const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showSellForm, setShowSellForm] = useState(false);
   const [listedTickets, setListedTickets] = useState([
@@ -25,7 +27,6 @@ function Sell() {
       status: "Active",
     },
   ]);
-
   const [newTicket, setNewTicket] = useState({
     game: "",
     section: "",
@@ -49,13 +50,11 @@ function Sell() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const newTicketWithId = {
       ...newTicket,
       id: listedTickets.length + 1,
       status: "Active",
     };
-
     setListedTickets([...listedTickets, newTicketWithId]);
     setShowSellForm(false);
     setNewTicket({
@@ -117,7 +116,6 @@ function Sell() {
               + List New Ticket
             </button>
           </div>
-
           {listedTickets.length > 0 ? (
             <div className="tickets-table-container">
               <table className="tickets-table">
@@ -169,7 +167,6 @@ function Sell() {
               Back to Listings
             </button>
           </div>
-
           <form className="sell-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="game">Game</label>
@@ -189,7 +186,6 @@ function Sell() {
                 <option value="vs. UNLV">vs. UNLV</option>
               </select>
             </div>
-
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="section">Section</label>
@@ -203,7 +199,6 @@ function Sell() {
                   required
                 />
               </div>
-
               <div className="form-group">
                 <label htmlFor="seat">Seat Number</label>
                 <input
@@ -217,7 +212,6 @@ function Sell() {
                 />
               </div>
             </div>
-
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="price">Price (USD)</label>
@@ -233,7 +227,6 @@ function Sell() {
                   required
                 />
               </div>
-
               <div className="form-group">
                 <label htmlFor="email">Email Address</label>
                 <input
@@ -247,13 +240,11 @@ function Sell() {
                 />
               </div>
             </div>
-
             <div className="form-footer">
               <p className="form-info">
                 By listing your ticket, you agree to our terms and conditions.
                 Your ticket will be minted as an NFT on the Solana blockchain.
               </p>
-
               <div className="form-buttons">
                 <button
                   type="button"
@@ -274,7 +265,6 @@ function Sell() {
           </form>
         </div>
       )}
-
       <div className="info-section">
         <h3 className="info-title">How Ticket Selling Works</h3>
         <div className="info-cards">
